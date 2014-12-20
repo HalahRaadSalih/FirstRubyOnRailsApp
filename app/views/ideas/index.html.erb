@@ -1,0 +1,14 @@
+<h1>Listing Ideas</h1>
+
+<% @ideas.in_groups_of(2) do |group| %>
+<div class="row">
+  <% group.compact.each do |idea| %>
+  <div class="col-md-6">
+    <%= image_tag(idea.picture_url, :width => 500,:class => "img-rounded") if idea.picture.present? %>
+
+    <h3><%= link_to idea.name, idea %></h3>
+    <%= idea.description %>
+  </div>
+  <% end %>
+</div>
+<% end %>

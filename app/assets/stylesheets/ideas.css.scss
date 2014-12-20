@@ -1,0 +1,24 @@
+// Place all the styles related to the ideas controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.container a:hover { color: #ff0000; text-decoration: none; background-color: rgba(0, 0, 9, 0); }
+.container input[type="submit"] {
+  height: 40px;
+  font-size: 13px;
+  background-color: #69A958;
+  border: 2px;
+  border-radius: 5px;
+  color: #fff;
+  margin-top: 20px;
+  }
+
+
+.likes_and_comments{
+  width:500px;
+}
+
+.col-md-6 a.img{
+  border: 2px;
+  border-radius: 10px;
+
+}

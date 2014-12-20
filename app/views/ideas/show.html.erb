@@ -1,0 +1,59 @@
+
+<div class="row">
+  <div class="col-md-6">
+
+    <%= image_tag(@idea.picture_url, width: '100%') if @idea.picture.present? %>
+      <br />
+      <br />
+
+      <p><b>Name: </b><%= @idea.name %></p>
+      <p><b>Description: </b><%= @idea.description %></p>
+      <p>
+        <%= link_to 'Edit', edit_idea_path(@idea) %> |
+        <%= link_to 'Destroy', @idea, data: { confirm: 'Are you sure?' }, method: :delete %> |
+        <%= link_to 'Back', ideas_path %>
+      </p>
+    <br />
+    <br />
+  </div>
+  <div class ="col-md-6">
+
+    <table class="likes_and_comments">
+      <tr>
+        <td>
+          <%= @likes_count %> likes
+          <%= @comments_count %> comments
+        </td>
+
+        <td><%= render 'likes/form' %></td>
+
+      </tr>
+    </table>
+
+
+    <br/>
+
+
+    <h4>Comments</h4>
+    <% @comments.each do |comment| %>
+    <div>
+      <strong><%= comment.user_name %></strong>
+
+
+      <p><%= comment.body %></p>
+      <p><%= link_to 'Delete', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' } %> |
+        <%= link_to 'Edit', edit_comment_path(comment) %>
+        </p>
+    </div>
+    <% end %>
+    <%= render 'comments/form' %>
+
+    <h4 Likes </h4>
+      <% @likes.each do |like| %>
+      <div>
+        <%= like.user.email %>
+        <br />
+  </div>
+  <% end %>
+
+</div>
